@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Dark mode styles */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Date picker dark mode styles */
+.react-datepicker {
+  @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+}
+
+.react-datepicker__header {
+  @apply bg-gray-100 dark:bg-gray-700 border-gray-200 dark:border-gray-700;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.react-datepicker__day:hover {
+  @apply bg-gray-200 dark:bg-gray-600;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-blue-500 text-white;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200;
+}
+
+.react-datepicker__day--outside-month {
+  @apply text-gray-400 dark:text-gray-500;
+}
+
+.react-datepicker__time-container {
+  @apply border-gray-200 dark:border-gray-700;
+}
+
+.react-datepicker__time-box {
+  @apply bg-white dark:bg-gray-800;
+}
+
+.react-datepicker__time-list-item {
+  @apply text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.react-datepicker__time-list-item--selected {
+  @apply bg-blue-500 text-white;
+}
+
+/* Scrollbar styling based on theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #94a3b8; /* slate-400 (light mode) */
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #334155; /* slate-800 (dark mode) */
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-color: #94a3b8 transparent;
+}
+.dark .custom-scrollbar {
+  scrollbar-color: #334155 transparent;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
